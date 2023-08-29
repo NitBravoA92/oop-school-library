@@ -13,14 +13,12 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -64,15 +62,6 @@
   </li>
   <li>Follow Microverse's list of best practices</li>
 </ul>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
----
-
-## 🚀 Live Demo <a name="live-demo"></a>
-<br>
-
-- Unfortunately, there is no live demo available for this project at the moment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -139,6 +128,9 @@ This will display the following output:
  true
  "Henry, age: 40, specialization: Data Science"
  true
+ "maximilianus"
+ "Maximilianus"
+ "Maximilian"
 ```
 
 This is just a test code. You can open the `run.rb` file using the code editor of your choice and change the input parameters in the creation of objects with Person, Student and Teacher classes:
@@ -150,10 +142,6 @@ teacher1 = Teacher.new('Data Science', 40, 'Henry')
 ```
 
 ### Run tests
-
-- Not aplicable.
-
-### Deployment
 
 - Not aplicable.
 
@@ -181,7 +169,7 @@ teacher1 = Teacher.new('Data Science', 40, 'Henry')
 
 Upcoming improvements:
 
-- [ ] Implement the "Decorator" design pattern to improve the code structure
+- [x] Implement the "Decorator" design pattern to extends the functionalities of the classes
 - [ ] Add basic UI to the program
 - [ ] Preserve data
 - [ ] Create unit tests
