@@ -139,6 +139,9 @@ This will display the following output:
  true
  "Henry, age: 40, specialization: Data Science"
  true
+ "maximilianus"
+ "Maximilianus"
+ "Maximilian"
 ```
 
 This is just a test code. You can open the `run.rb` file using the code editor of your choice and change the input parameters in the creation of objects with Person, Student and Teacher classes:
@@ -181,7 +184,7 @@ teacher1 = Teacher.new('Data Science', 40, 'Henry')
 
 Upcoming improvements:
 
-- [ ] Implement the "Decorator" design pattern to improve the code structure
+- [x] Implement the "Decorator" design pattern to extends the functionalities of the classes
 - [ ] Add basic UI to the program
 - [ ] Preserve data
 - [ ] Create unit tests
