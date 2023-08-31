@@ -122,23 +122,29 @@ Run the following command inside the project folder:
 This will display the following output:
 
 ```
- true
- "James, age: 19, classroom: 10"
- "¯(ツ)/¯"
- true
- "Henry, age: 40, specialization: Data Science"
- true
- "maximilianus"
- "Maximilianus"
- "Maximilian"
+true
+"Henry, age: 40, specialization: Data Science"
+true
+"James, age: 19, classroom: Biology"
+"¯(ツ)/¯"
+true
+"maximilianus"
+"Maximilianus"
+"Maximilian"
+"Jack"
+"Jack rents the Book: The Gene: An Intimate History on 2023-08-30"
 ```
 
-This is just a test code. You can open the `run.rb` file using the code editor of your choice and change the input parameters in the creation of objects with Person, Student and Teacher classes:
+This is just a test code. You can open the `run.rb` file using the code editor of your choice and change the input parameters in the creation of objects with Classroom, Person, Student, Teacher, Book and Rental classes:
 
 ```
+classroom1 = Classroom.new('Biology')
 person1 = Person.new(15, 'Rick', parent_permission: true)
-student1 = Student.new(10, 19, 'James', parent_permission: false)
+student1 = Student.new(classroom1, 19, 'James', parent_permission: false)
 teacher1 = Teacher.new('Data Science', 40, 'Henry')
+book1 = Book.new('The Gene: An Intimate History', 'Siddhartha Mukherjee')
+person3 = Person.new(29, 'Jack')
+rent_book1 = Rental.new(book1, person3, '2023-08-30')
 ```
 
 ### Run tests
@@ -170,6 +176,7 @@ teacher1 = Teacher.new('Data Science', 40, 'Henry')
 Upcoming improvements:
 
 - [x] Implement the "Decorator" design pattern to extends the functionalities of the classes
+- [x] Implement the association relationships
 - [ ] Add basic UI to the program
 - [ ] Preserve data
 - [ ] Create unit tests
