@@ -9,6 +9,6 @@ class Classroom
 
   def enter_student(student)
     @students.push(student)
-    student.classroom = self # make this student part of this classroom 
+    student.classroom = self # make this student part of this classroom
   end
 end
