@@ -57,6 +57,41 @@ class App
     puts result ? 'Person created successfully!' : 'Person not created!'
   end
 
+  def create_book
+    print 'Title: '
+    title = gets.chomp.strip
+    print 'Author: '
+    author = gets.chomp.strip
+    new_book = Book.new(title, author)
+    @books_list << new_book
+    puts @books_list.include?(new_book) ? 'Book created successfully' : 'Book not created'
+  end
+
+  def create_rental
+    if @books_list.empty? || @people_list.empty?
+      message = 'It is not possible to create a rental...'
+      message = "#{message}There are no books available. " if @books_list.empty?
+      message = "#{message}There are no people stored." if @people_list.empty?
+      puts message
+    else
+      puts 'Select a book from the following list by number'
+      @books_list.each_with_index { |b, index| puts "#{index}) Title: #{b.title}, Author: #{b.author}" }
+      book_index = gets.chomp.strip.to_i
+      
+      puts "\nSelect a person from the following list by number (not id)"
+      @people_list.each_with_index { |p, index| puts "#{index}) [#{p.type}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}" }
+      person_index = gets.chomp.strip.to_i
+
+      if @books_list.length > book_index && @people_list.length > person_index
+        print "\nDate:"
+        date = gets.chomp.strip
+        rental = Rental.new(@books_list[book_index], @people_list[person_index], date)
+        @rentals_list << rental
+      end
+      puts @rentals_list.include?(rental) ? 'Rental created successfully!' : 'Rental not created'
+    end
+  end
+
   private
 
   def create_classroom(label)
