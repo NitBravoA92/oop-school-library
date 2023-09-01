@@ -37,4 +37,49 @@ class App
     end
   end
 
+  def create_person
+    result = false
+
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
+    person_option = gets.chomp.strip.to_i
+    print 'Age: '
+    age = gets.chomp.strip.to_i
+    print 'Name: '
+    name = gets.chomp.strip
+
+    case
+    when person_option == 1 then result = self.create_student?(name, age)
+    when person_option == 2 then result = self.create_teacher?(name, age)
+    else 
+      puts 'Invalid option...'
+    end
+
+    puts result ? 'Person created successfully!' : 'Person not created!'
+  end
+
+  private
+
+  def create_classroom(label)
+    new_classroom = Classroom.new(label)
+    new_classroom
+  end
+
+  def create_student?(name, age)
+    print 'Has parent permission? [Y/N]:'
+    has_permission = gets.chomp.strip.upcase
+    classroom = self.create_classroom('Biology')
+    new_student = Student.new(classroom, age, name, parent_permission: has_permission === 'Y')
+    new_student.type = 'Student'
+    @people_list << new_student
+    @people_list.include?(new_student)
+  end
+
+  def create_teacher?(name, age)
+    print 'Specialization: '
+    specialization = gets.chomp.strip
+    new_teacher = Teacher.new(specialization, age, name)
+    new_teacher.type = 'Teacher'
+    @people_list << new_teacher
+    @people_list.include?(new_teacher)
+  end
 end
