@@ -92,6 +92,50 @@ class App
     end
   end
 
+  def menu
+    menu_option = 0
+
+    until menu_option == 7 do
+      puts "\nPlease choose an option by enterin a number:"
+      puts '1. List all books'
+      puts '2. List all people'
+      puts '3. Create a person'
+      puts '4. Create a book'
+      puts '5. Create a rental'
+      puts '6. List all rentals for a given person id'
+      puts '7. Exit'
+
+      menu_option = gets.chomp.strip.to_i
+      self.menu_controller(menu_option)
+    end
+  end
+
+  def menu_controller(option)
+    case option
+    when 1
+      self.list_books
+    when 2
+      self.list_people
+    when 3
+      self.create_person
+    when 4
+      self.create_book
+    when 5
+      self.create_rental
+    when 6
+      self.list_rentals
+    when 7
+      puts 'Thank you for using this app!'
+    else
+      puts 'Invalid Option! Try again'
+    end
+  end
+
+  def run
+    puts @title
+    self.menu
+  end
+
   private
 
   def create_classroom(label)
