@@ -116,36 +116,25 @@ It should show you the version of ruby ​​installed. If this does not happen 
 Run the following command inside the project folder:
 
 ```
- ruby run.rb
+ ruby main.rb
 ```
 
-This will display the following output:
+This will display the main application menu:
 
 ```
-true
-"Henry, age: 40, specialization: Data Science"
-true
-"James, age: 19, classroom: Biology"
-"¯(ツ)/¯"
-true
-"maximilianus"
-"Maximilianus"
-"Maximilian"
-"Jack"
-"Jack rents the Book: The Gene: An Intimate History on 2023-08-30"
+Welcome to School Library App!
+
+Please choose an option by enterin a number:
+1. List all books
+2. List all people
+3. Create a person
+4. Create a book
+5. Create a rental
+6. List all rentals for a given person id
+7. Exit
 ```
 
-This is just a test code. You can open the `run.rb` file using the code editor of your choice and change the input parameters in the creation of objects with Classroom, Person, Student, Teacher, Book and Rental classes:
-
-```
-classroom1 = Classroom.new('Biology')
-person1 = Person.new(15, 'Rick', parent_permission: true)
-student1 = Student.new(classroom1, 19, 'James', parent_permission: false)
-teacher1 = Teacher.new('Data Science', 40, 'Henry')
-book1 = Book.new('The Gene: An Intimate History', 'Siddhartha Mukherjee')
-person3 = Person.new(29, 'Jack')
-rent_book1 = Rental.new(book1, person3, '2023-08-30')
-```
+You can navigate through the program's options menu to create books, students, teachers, and book rentals. You can also see the list of all the records you have previously added.
 
 ### Run tests
 
@@ -177,7 +166,7 @@ Upcoming improvements:
 
 - [x] Implement the "Decorator" design pattern to extends the functionalities of the classes
 - [x] Implement the association relationships
-- [ ] Add basic UI to the program
+- [x] Add basic UI to the program
 - [ ] Preserve data
 - [ ] Create unit tests
 
