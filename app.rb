@@ -146,7 +146,6 @@ class App
     classroom = Classroom.new('Biology')
     new_student = Student.new(classroom, age, name, parent_permission: has_permission == 'Y')
     new_student.type = 'Student'
-    @people_list << new_student
   end
 
   def create_teacher(name, age)
