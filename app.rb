@@ -65,4 +65,15 @@ class App
       end
     end
   end
+
+  private
+
+  def create_student(name, age)
+    print "Has parent permission? [Y/N]:"
+    has_permission = gets.chomp.strip.upcase
+    classroom = Classroom.new("Biology")
+    new_student = Student.new(classroom, age, name, parent_permission: has_permission == "Y")
+    new_student.type = "Student"
+    new_student
+  end
 end
