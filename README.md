@@ -60,6 +60,7 @@
       <li>Rubocop</li>
     </ul>
   </li>
+  <li>Apply SOLID principles</li>
   <li>Follow Microverse's list of best practices</li>
 </ul>
 
@@ -154,6 +155,12 @@ You can navigate through the program's options menu to create books, students, t
 - Twitter: [@softwareDevOne](https://twitter.com/softwareDevOne)
 - LinkedIn: [Nitcelis Bravo Alcala](https://www.linkedin.com/in/nitcelis-bravo-alcala-b65340158)
 
+👤 **Ahmed Eid**
+
+- GitHub: [Ahmed Eid](https://github.com/ahmedeid6842)
+- Twitter: [@ahmedeid2684](https://twitter.com/ahmedeid2684)
+- LinkedIn: [Ahmed Eid](https://www.linkedin.com/in/ameid/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
@@ -167,6 +174,7 @@ Upcoming improvements:
 - [x] Implement the "Decorator" design pattern to extends the functionalities of the classes
 - [x] Implement the association relationships
 - [x] Add basic UI to the program
+- [x] Apply SOLID principles
 - [ ] Preserve data
 - [ ] Create unit tests
 
