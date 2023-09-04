@@ -33,4 +33,16 @@ class App
       puts "Date: #{r.date}, Book #{r.book.title} by #{r.book.author}" if r.person.id == person_id
     end
   end
+
+  def create_person(option_selected, name, age)
+    case option_selected
+    when 1 then new_person = create_student(name, age)
+    when 2 then new_person = create_teacher(name, age)
+    else
+      puts "Invalid option..."
+      return nil
+    end
+    @people_list << new_person
+    puts "Person created successfully!"
+  end
 end
