@@ -38,4 +38,18 @@ class UserInterfaceActions
     @application.create_book(title, author)
   end
 
+  def create_rental
+    puts 'Select a book from the following list by number'
+    display_books
+    book_index = gets.chomp.strip.to_i
+
+    puts "\nSelect a person from the following list by number (not id)"
+    display_people
+    person_index = gets.chomp.strip.to_i
+
+    print "\nDate:"
+    date = gets.chomp.strip
+    @application.create_rental(book_index, person_index, date)
+  end
+
 end
