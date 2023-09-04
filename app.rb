@@ -51,4 +51,18 @@ class App
     @books_list << new_book
     puts "Book created successfully"
   end
+
+  def create_rental(book_index, person_index, date)
+    if @books_list.empty? || @people_list.empty?
+      puts "Ups! There are no people or books available..."
+    else
+      if @books_list.length > book_index && @people_list.length > person_index
+        rental = Rental.new(@books_list[book_index], @people_list[person_index], date)
+        @rentals_list << rental
+        puts "Rental created successfully!"
+      else
+        puts "Rental not created"
+      end
+    end
+  end
 end
