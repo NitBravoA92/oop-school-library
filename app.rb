@@ -1,11 +1,11 @@
-require_relative "./classes/person"
-require_relative "./classes/student"
-require_relative "./classes/classroom"
-require_relative "./classes/teacher"
-require_relative "./classes/capitalize_decorator"
-require_relative "./classes/trimmer_decorator"
-require_relative "./classes/book"
-require_relative "./classes/rental"
+require_relative 'classes/person'
+require_relative 'classes/student'
+require_relative 'classes/classroom'
+require_relative 'classes/teacher'
+require_relative 'classes/capitalize_decorator'
+require_relative 'classes/trimmer_decorator'
+require_relative 'classes/book'
+require_relative 'classes/rental'
 
 class App
   attr_accessor :books_list, :people_list, :rentals_list
@@ -39,49 +39,47 @@ class App
     when 1 then new_person = create_student(name, age)
     when 2 then new_person = create_teacher(name, age)
     else
-      puts "Invalid option..."
+      puts 'Invalid option...'
       return nil
     end
     @people_list << new_person
-    puts "Person created successfully!"
+    puts 'Person created successfully!'
   end
 
   def create_book(title, author)
     new_book = Book.new(title, author)
     @books_list << new_book
-    puts "Book created successfully"
+    puts 'Book created successfully'
   end
 
   def create_rental(book_index, person_index, date)
     if @books_list.empty? || @people_list.empty?
-      puts "Ups! There are no people or books available..."
+      puts 'Ups! There are no people or books available...'
+    elsif @books_list.length > book_index && @people_list.length > person_index
+      rental = Rental.new(@books_list[book_index], @people_list[person_index], date)
+      @rentals_list << rental
+      puts 'Rental created successfully!'
     else
-      if @books_list.length > book_index && @people_list.length > person_index
-        rental = Rental.new(@books_list[book_index], @people_list[person_index], date)
-        @rentals_list << rental
-        puts "Rental created successfully!"
-      else
-        puts "Rental not created"
-      end
+      puts 'Rental not created'
     end
   end
 
   private
 
   def create_student(name, age)
-    print "Has parent permission? [Y/N]:"
+    print 'Has parent permission? [Y/N]:'
     has_permission = gets.chomp.strip.upcase
-    classroom = Classroom.new("Biology")
-    new_student = Student.new(classroom, age, name, parent_permission: has_permission == "Y")
-    new_student.type = "Student"
+    classroom = Classroom.new('Biology')
+    new_student = Student.new(classroom, age, name, parent_permission: has_permission == 'Y')
+    new_student.type = 'Student'
     new_student
   end
 
   def create_teacher(name, age)
-    print "Specialization: "
+    print 'Specialization: '
     specialization = gets.chomp.strip
     new_teacher = Teacher.new(specialization, age, name)
-    new_teacher.type = "Teacher"
+    new_teacher.type = 'Teacher'
     new_teacher
   end
 end
