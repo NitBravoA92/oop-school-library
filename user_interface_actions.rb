@@ -52,4 +52,16 @@ class UserInterfaceActions
     @application.create_rental(book_index, person_index, date)
   end
 
+  def menu_options
+    puts "\nPlease choose an option by entering a number:
+    1. List all books
+    2. List all people
+    3. Create a person
+    4. Create a book
+    5. Create a rental
+    6. List all rentals for a given person id
+    7. Exit"
+    gets.chomp.strip.to_i
+  end
+
 end
