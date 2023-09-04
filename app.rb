@@ -15,4 +15,10 @@ class App
     @people_list = []
     @rentals_list = []
   end
+
+  def list_books
+    @books_list.each_with_index do |b, index|
+      puts "#{index}) Title: #{b.title}, Author: #{b.author}"
+    end
+  end
 end
