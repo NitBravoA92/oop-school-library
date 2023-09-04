@@ -27,4 +27,10 @@ class App
       puts "#{index}) [#{p.type}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}"
     end
   end
+
+  def list_rentals(person_id)
+    @rentals_list.each do |r|
+      puts "Date: #{r.date}, Book #{r.book.title} by #{r.book.author}" if r.person.id == person_id
+    end
+  end
 end
