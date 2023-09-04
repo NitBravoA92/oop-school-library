@@ -20,4 +20,14 @@ class UserInterfaceActions
     @application.list_rentals(person_id)
   end
 
+  def create_person
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
+    person_option = gets.chomp.strip.to_i
+    print 'Age: '
+    age = gets.chomp.strip.to_i
+    print 'Name: '
+    name = gets.chomp.strip
+    @application.create_person(person_option, name, age)
+  end
+
 end
