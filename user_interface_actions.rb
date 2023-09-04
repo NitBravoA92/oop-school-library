@@ -8,4 +8,9 @@ class UserInterfaceActions
     @application.list_books
   end
 
+  def display_people
+    puts 'People:'
+    @application.list_people
+  end
+
 end
