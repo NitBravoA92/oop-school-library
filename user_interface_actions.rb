@@ -64,4 +64,20 @@ class UserInterfaceActions
     gets.chomp.strip.to_i
   end
 
+  def menu
+    loop do
+      option = menu_options
+      case option
+      when 1 then display_books
+      when 2 then display_people
+      when 3 then create_person
+      when 4 then create_book
+      when 5 then create_rental
+      when 6 then display_rentals
+      else
+        puts 'Thank you for using this app!'
+        break
+      end
+    end
+  end
 end
