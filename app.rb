@@ -76,4 +76,12 @@ class App
     new_student.type = "Student"
     new_student
   end
+
+  def create_teacher(name, age)
+    print "Specialization: "
+    specialization = gets.chomp.strip
+    new_teacher = Teacher.new(specialization, age, name)
+    new_teacher.type = "Teacher"
+    new_teacher
+  end
 end
