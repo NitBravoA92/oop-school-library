@@ -21,4 +21,10 @@ class App
       puts "#{index}) Title: #{b.title}, Author: #{b.author}"
     end
   end
+
+  def list_people
+    @people_list.each_with_index do |p, index|
+      puts "#{index}) [#{p.type}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}"
+    end
+  end
 end
