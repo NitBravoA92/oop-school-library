@@ -45,4 +45,10 @@ class App
     @people_list << new_person
     puts "Person created successfully!"
   end
+
+  def create_book(title, author)
+    new_book = Book.new(title, author)
+    @books_list << new_book
+    puts "Book created successfully"
+  end
 end
