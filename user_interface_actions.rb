@@ -30,4 +30,12 @@ class UserInterfaceActions
     @application.create_person(person_option, name, age)
   end
 
+  def create_book
+    print 'Title: '
+    title = gets.chomp.strip
+    print 'Author: '
+    author = gets.chomp.strip
+    @application.create_book(title, author)
+  end
+
 end
