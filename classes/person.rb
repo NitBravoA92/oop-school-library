@@ -1,10 +1,10 @@
-require_relative "nameable"
+require_relative 'nameable'
 
 class Person < Nameable
-  def initialize(id, age, name = "Unknown", parent_permission: true)
+  def initialize(id, age, name = 'Unknown', parent_permission: true)
     super()
     @id = id
-    @type = "Unknown"
+    @type = 'Unknown'
     @age = age
     @name = name
     @parent_permission = parent_permission

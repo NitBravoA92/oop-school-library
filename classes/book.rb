@@ -8,12 +8,12 @@ class Book
     @rentals = []
   end
 
-  def to_json
+  def to_json(*_args)
     {
       id: @id,
       title: @title,
       author: @author,
-      rentals: @rentals.map { |r| r.id },
+      rentals: @rentals.map(&:id)
     }
   end
 

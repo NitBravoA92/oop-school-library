@@ -12,7 +12,7 @@ class Teacher < Person
     true
   end
 
-  def to_json
+  def to_json(*_args)
     {
       id: @id,
       type: 'teacher',
@@ -20,7 +20,7 @@ class Teacher < Person
       age: @age,
       parent_permission: @parent_permission,
       specialization: @specialization,
-      rentals: @rentals.map { |r| r.id }
+      rentals: @rentals.map(&:id)
     }
   end
 end

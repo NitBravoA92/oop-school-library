@@ -13,7 +13,7 @@ class Student < Person
     '¯(ツ)/¯'
   end
 
-  def to_json
+  def to_json(*_args)
     {
       id: @id,
       classroom: @classroom.label,
@@ -21,7 +21,7 @@ class Student < Person
       name: @name,
       age: @age,
       parent_permission: @parent_permission,
-      rentals: @rentals.map { |r| r.id }
+      rentals: @rentals.map(&:id)
     }
   end
 end
