@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "classroom": "Biology",
+    "type": "student",
+    "name": "Juan",
+    "age": 20,
+    "parent_permission": true,
+    "rentals": [
+
+    ]
+  },
+  {
+    "id": 2,
+    "type": "teacher",
+    "name": "Jaimes",
+    "age": 40,
+    "parent_permission": true,
+    "specialization": "Biology",
+    "rentals": [
+      1
+    ]
+  },
+  {
+    "id": 3,
+    "classroom": "Biology",
+    "type": "student",
+    "name": "Michael",
+    "age": 22,
+    "parent_permission": false,
+    "rentals": [
+
+    ]
+  },
+  {
+    "id": 4,
+    "type": "teacher",
+    "name": "Frank",
+    "age": 56,
+    "parent_permission": true,
+    "specialization": "Math",
+    "rentals": [
+      2
+    ]
+  }
+]

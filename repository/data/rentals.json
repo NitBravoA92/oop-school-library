@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "date": "2023-03-20",
+    "book": {
+      "id": 1,
+      "title": "Book 1",
+      "author": "Author 1",
+      "rentals": [
+        1
+      ]
+    },
+    "person": {
+      "id": 2,
+      "type": "teacher",
+      "name": "Jaimes",
+      "age": 40,
+      "parent_permission": true,
+      "specialization": "Biology",
+      "rentals": [
+        1
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "date": "2023-07-10",
+    "book": {
+      "id": 2,
+      "title": "Book 2",
+      "author": "Author 2",
+      "rentals": [
+        2
+      ]
+    },
+    "person": {
+      "id": 4,
+      "type": "teacher",
+      "name": "Frank",
+      "age": 56,
+      "parent_permission": true,
+      "specialization": "Math",
+      "rentals": [
+        2
+      ]
+    }
+  }
+]
