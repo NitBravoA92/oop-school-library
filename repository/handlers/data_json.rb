@@ -23,6 +23,11 @@ module DataRepository
     people_records
   end
 
+  def save_books(books)
+    data = books.map { |book| book.to_json }
+    insert_data('books.json', data)
+  end
+
   def get_data(filename)
     file = "./repository/data/#{filename}"
     return [] unless File.exist?(file)
