@@ -26,4 +26,10 @@ describe Teacher do
       expect(@teacher.name).to eq("Frank Mendez")
     end
   end
+
+  context "can_use_services? method" do
+    it "should always return true" do
+      expect(@teacher.can_use_services?).to be_truthy
+    end
+  end
 end
