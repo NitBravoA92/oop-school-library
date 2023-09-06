@@ -23,6 +23,17 @@ module DataRepository
     people_records
   end
 
+  def find_all_rentals(books, people)
+    rentals = []
+    data = get_data('rentals.json')
+    data.each do |rental|
+      person = people.find { |item| item.id == rental["person"]["id"] }
+      book = books.find { |item| item.id == rental["book"]["id"] }
+      rentals.push(Rental.new(rental["id"], book, person, rental["date"]))
+    end
+    rentals
+  end
+
   def save_books(books)
     data = books.map { |book| book.to_json }
     insert_data('books.json', data)
