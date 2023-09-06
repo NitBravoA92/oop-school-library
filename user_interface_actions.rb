@@ -75,6 +75,7 @@ class UserInterfaceActions
       when 5 then create_rental
       when 6 then display_rentals
       else
+        @application.finish
         puts 'Thank you for using this app!'
         break
       end
