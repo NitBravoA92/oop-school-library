@@ -44,6 +44,11 @@ module DataRepository
     insert_data('people.json', data)
   end
 
+  def save_rentals(rentals)
+    data = rentals.map { |rental| { id: rental.id, date: rental.date, book: rental.book.to_json, person: rental.person.to_json } }
+    insert_data('rentals.json', data)
+  end
+
   def get_data(filename)
     file = "./repository/data/#{filename}"
     return [] unless File.exist?(file)
