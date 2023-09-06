@@ -34,4 +34,13 @@ describe Person do
       expect(@person.correct_name).to eq("James Lenz")
     end
   end
+
+  context "new_rental method" do
+    it "should add a new object of the Rental class to the rentals array" do
+      book = Book.new(5, "Harry Potter and the Prisoner of Azkaban", "J.K. Rowling")
+      rental = Rental.new(73, book, @person, "2023-06-25")
+      @person.new_rental(rental)
+      expect(@person.rentals).to include(rental) # include the new rental object in the rentals array
+    end
+  end
 end
