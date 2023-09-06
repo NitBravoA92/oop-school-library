@@ -16,7 +16,7 @@ class App
   def initialize
     @books_list = find_all_books
     @people_list = find_all_people
-    @rentals_list = []
+    @rentals_list = find_all_rentals(@books_list, @people_list)
   end
 
   def list_books
