@@ -22,4 +22,10 @@ describe Person do
       expect(@person.name).to eq("James Lenz")
     end
   end
+
+  context "can_use_services? method" do
+    it "should validate if the person can use the services" do
+      expect(@person.can_use_services?).to be_truthy
+    end
+  end
 end
