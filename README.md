@@ -61,6 +61,7 @@
     </ul>
   </li>
   <li>Apply SOLID principles</li>
+  <li>Data persistent in JSON files</li>
   <li>Follow Microverse's list of best practices</li>
 </ul>
 
@@ -175,7 +176,7 @@ Upcoming improvements:
 - [x] Implement the association relationships
 - [x] Add basic UI to the program
 - [x] Apply SOLID principles
-- [ ] Preserve data
+- [x] Preserve data
 - [ ] Create unit tests
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
