@@ -14,4 +14,10 @@ describe TrimmerDecorator do
       expect(@trimmer_decorator).to be_instance_of(TrimmerDecorator)
     end
   end
+
+  context "correct_name method" do
+    it "should return a shorther version of the name of the teacher" do
+      expect(@trimmer_decorator.correct_name).to eq('Samuel Bro')
+    end
+  end
 end
