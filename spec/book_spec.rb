@@ -39,4 +39,13 @@ describe Book do
       expect(@book.to_json).to eq(expected_data)
     end
   end
+
+  context "new_rental method" do
+    it "should add a new object of the Rental class to the rentals array" do
+      teacher = Teacher.new(28, "Mathematics", 49, "Roger Smith")
+      rental = Rental.new(90, @book, teacher, "2023-04-10")
+      @book.new_rental(rental)
+      expect(@book.rentals).to include(rental) # include the new rental object in the rentals array
+    end
+  end
 end
