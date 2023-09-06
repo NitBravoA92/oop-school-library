@@ -28,6 +28,11 @@ module DataRepository
     insert_data('books.json', data)
   end
 
+  def save_people(people)
+    data = people.map { |person| person.to_json }
+    insert_data('people.json', data)
+  end
+
   def get_data(filename)
     file = "./repository/data/#{filename}"
     return [] unless File.exist?(file)
