@@ -70,6 +70,12 @@ class App
     end
   end
 
+  def finish
+    save_books(@books_list)
+    save_people(@people_list)
+    save_rentals(@rentals_list)
+  end
+
   private
 
   def create_student(id, name, age)
