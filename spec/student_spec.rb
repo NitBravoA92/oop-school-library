@@ -28,4 +28,10 @@ describe Student do
       expect(@student.name).to eq("Louis Schnnel")
     end
   end
+
+  context "play_hooky method" do
+    it "should return the ¯(ツ)/¯ string" do
+      expect(@student.play_hooky).to eq('¯(ツ)/¯')
+    end
+  end
 end
