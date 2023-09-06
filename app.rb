@@ -6,13 +6,16 @@ require_relative 'classes/capitalize_decorator'
 require_relative 'classes/trimmer_decorator'
 require_relative 'classes/book'
 require_relative 'classes/rental'
+require_relative 'repository/handlers/data_json'
 
 class App
+  include DataRepository
+
   attr_accessor :books_list, :people_list, :rentals_list
 
   def initialize
-    @books_list = []
-    @people_list = []
+    @books_list = find_all_books
+    @people_list = find_all_people
     @rentals_list = []
   end
 
