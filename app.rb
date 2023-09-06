@@ -61,7 +61,8 @@ class App
     if @books_list.empty? || @people_list.empty?
       puts 'Ups! There are no people or books available...'
     elsif @books_list.length > book_index && @people_list.length > person_index
-      rental = Rental.new(@books_list[book_index], @people_list[person_index], date)
+      id = @rentals_list.length + 1
+      rental = Rental.new(id, @books_list[book_index], @people_list[person_index], date)
       @rentals_list << rental
       puts 'Rental created successfully!'
     else
