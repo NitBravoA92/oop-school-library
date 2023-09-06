@@ -32,4 +32,19 @@ describe Teacher do
       expect(@teacher.can_use_services?).to be_truthy
     end
   end
+
+  context "to_json method" do
+    it "should convert the a Teacher object to a hash format" do
+      expected_data = {
+        id: 1,
+        type: 'teacher',
+        name: 'Frank Mendez',
+        age: 57,
+        parent_permission: true,
+        specialization: "Genetics",
+        rentals: @teacher.rentals.map(&:id)
+      }
+      expect(@teacher.to_json).to eq(expected_data)
+    end
+  end
 end
