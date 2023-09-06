@@ -38,9 +38,10 @@ class App
   end
 
   def create_person(option_selected, name, age)
+    id = @people_list.length + 1
     case option_selected
-    when 1 then new_person = create_student(name, age)
-    when 2 then new_person = create_teacher(name, age)
+    when 1 then new_person = create_student(id, name, age)
+    when 2 then new_person = create_teacher(id, name, age)
     else
       puts 'Invalid option...'
       return nil
@@ -70,19 +71,19 @@ class App
 
   private
 
-  def create_student(name, age)
+  def create_student(id, name, age)
     print 'Has parent permission? [Y/N]:'
     has_permission = gets.chomp.strip.upcase
     classroom = Classroom.new('Biology')
-    new_student = Student.new(classroom, age, name, parent_permission: has_permission == 'Y')
+    new_student = Student.new(id, classroom, age, name, parent_permission: has_permission == 'Y')
     new_student.type = 'Student'
     new_student
   end
 
-  def create_teacher(name, age)
+  def create_teacher(id, name, age)
     print 'Specialization: '
     specialization = gets.chomp.strip
-    new_teacher = Teacher.new(specialization, age, name)
+    new_teacher = Teacher.new(id, specialization, age, name)
     new_teacher.type = 'Teacher'
     new_teacher
   end
