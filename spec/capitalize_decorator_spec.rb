@@ -12,4 +12,10 @@ describe CapitalizeDecorator do
       expect(@capitalize_decorator).to be_instance_of(CapitalizeDecorator)
     end
   end
+
+  context "correct_name method" do
+    it "should return the the name of the teacher in capitalize" do
+      expect(@capitalize_decorator.correct_name).to eq('Paul franklin')
+    end
+  end
 end
