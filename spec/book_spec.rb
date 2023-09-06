@@ -27,4 +27,16 @@ describe Book do
       expect(@book.rentals.size).to eq(0)
     end
   end
+
+  context "to_json method" do
+    it "should convert the a Book object to a hash format" do
+      expected_data = {
+        :id => 1,
+        :title => "The Great Gatsby",
+        :author => "F. Scott Fitzgerald",
+        :rentals => [],
+      }
+      expect(@book.to_json).to eq(expected_data)
+    end
+  end
 end
