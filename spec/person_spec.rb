@@ -28,4 +28,10 @@ describe Person do
       expect(@person.can_use_services?).to be_truthy
     end
   end
+
+  context "correct_name method" do
+    it "should return the name of the Person" do
+      expect(@person.correct_name).to eq("James Lenz")
+    end
+  end
 end
