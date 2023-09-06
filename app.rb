@@ -50,7 +50,8 @@ class App
   end
 
   def create_book(title, author)
-    new_book = Book.new(title, author)
+    id = (@books_list.length + 1)
+    new_book = Book.new(id, title, author)
     @books_list << new_book
     puts 'Book created successfully'
   end
