@@ -34,4 +34,19 @@ describe Student do
       expect(@student.play_hooky).to eq('¯(ツ)/¯')
     end
   end
+
+  context "to_json method" do
+    it "should convert the a Student object to a hash format" do
+      expected_data = {
+        id: 1,
+        classroom: @classroom.label,
+        type: 'student',
+        name: "Louis Schnnel",
+        age: 17,
+        parent_permission: false,
+        rentals: @student.rentals.map(&:id)
+      }
+      expect(@student.to_json).to eq(expected_data)
+    end
+  end
 end
